@@ -23,20 +23,23 @@ const Signup = () => {
   const navigate = useNavigate();
 
   const onChange = (e) => {
-    if (e.name === "name") {
+    if (e.target.name === "name") {
       setName(e.target.value);
     }
-    if (e.name === "email") {
+    if (e.target.name === "email") {
       setEmail(e.target.value);
     }
-    if (e.name === "password") {
+    if (e.target.name === "password") {
       setPassword(e.target.value);
     }
   };
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    if (!name || !email || !password) return;
+    if (!name || !email || !password) {
+      console.log("error");
+      return;
+    }
     try {
       setIsLoading(true);
       const credentials = await createUserWithEmailAndPassword(
