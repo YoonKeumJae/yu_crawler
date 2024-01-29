@@ -3,13 +3,14 @@ import GoogleBtn from "../components/GoogleBtn";
 import styled from "styled-components";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Wrapper = styled.div``;
 const Title = styled.span``;
 const SignInForm = styled.form``;
 const Input = styled.input``;
 const SubmitBtn = styled.button``;
+const Signup = styled.span``;
 
 const Signin = () => {
   const [email, setEmail] = useState("");
@@ -59,6 +60,9 @@ const Signin = () => {
         </SubmitBtn>
       </SignInForm>
       <GoogleBtn />
+      <Signup>
+        Don't have an account? <Link to="/signup">Sign up &rarr;</Link>
+      </Signup>
     </Wrapper>
   );
 };
