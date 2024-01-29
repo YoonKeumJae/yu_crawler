@@ -17,10 +17,10 @@ const Signin = () => {
   const [password, setPassword] = useState("");
 
   const onChange = (e) => {
-    if (e.name === "email") {
+    if (e.target.name === "email") {
       setEmail(e.target.value);
     }
-    if (e.name === "password") {
+    if (e.target.name === "password") {
       setPassword(e.target.value);
     }
   };
