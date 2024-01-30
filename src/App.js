@@ -4,6 +4,7 @@ import Signin from "./routes/Signin";
 import Signup from "./routes/Signup";
 import Protecter from "./routes/Protecter";
 import Home from "./routes/Home";
+import List from "./routes/List";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
       {
         path: "",
         element: <Home />,
+      },
+      {
+        path: "/list",
+        element: <List />,
       },
     ],
   },

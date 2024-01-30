@@ -1,8 +1,15 @@
+import styled from "styled-components";
+import ListBox from "../components/ListBox";
+
+const Wrapper = styled.div``;
+const Title = styled.span``;
+
 const Home = () => {
   return (
-    <div>
-      Home here
-    </div>
+    <Wrapper>
+      <Title>Title</Title>
+      <ListBox />
+    </Wrapper>
   );
 };
 
