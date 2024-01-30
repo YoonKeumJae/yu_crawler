@@ -2,16 +2,26 @@ import { signOut } from "firebase/auth";
 import styled from "styled-components";
 import { auth } from "../firebase";
 import { Outlet, useNavigate } from "react-router-dom";
-import Profile from "./Profile";
 
 const Wrapper = styled.div``;
-const Title = styled.span``;
-const Logout = styled.button``;
+const NavBarWrapper = styled.div``;
 const Button = styled.button``;
 
 const Layout = () => {
   const navigate = useNavigate();
 
+  const onClickHome = (e) => {
+    e.preventDefault();
+    navigate("/");
+  };
+  const onClickList = (e) => {
+    e.preventDefault();
+    navigate("/list");
+  };
+  const onClickBookmarks = (e) => {
+    e.preventDefault();
+    navigate("/bookmarks");
+  };
   const onClickLogout = async () => {
     const ok = window.confirm("Are you sure you want to log out?");
     if (ok) {
@@ -20,19 +30,22 @@ const Layout = () => {
     }
   };
 
-  const onClickList = (e) => {
-    e.preventDefault();
-    navigate("/list");
-  };
-
   return (
     <Wrapper>
-      <Title>Navigation Bar</Title>
-      <Profile />
-      <Button type="button" onClick={onClickList}>
-        List
-      </Button>
-      <Logout onClick={onClickLogout}>Log out</Logout>
+      <NavBarWrapper>
+        <Button type="button" onClick={onClickHome}>
+          Home
+        </Button>
+        <Button type="button" onClick={onClickList}>
+          List Update
+        </Button>
+        <Button type="button" onClick={onClickBookmarks}>
+          Bookmarks
+        </Button>
+        <Button type="button" onClick={onClickLogout}>
+          Log out
+        </Button>
+      </NavBarWrapper>
       <Outlet />
     </Wrapper>
   );

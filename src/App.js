@@ -5,6 +5,7 @@ import Signup from "./routes/Signup";
 import Protecter from "./routes/Protecter";
 import Home from "./routes/Home";
 import List from "./routes/List";
+import Bookmarks from "./routes/Bookmarks";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: "/list",
         element: <List />,
+      },
+      {
+        path: "/bookmarks",
+        element: <Bookmarks />,
       },
     ],
   },
