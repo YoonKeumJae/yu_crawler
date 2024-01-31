@@ -6,6 +6,7 @@ import Protecter from "./routes/Protecter";
 import Home from "./routes/Home";
 import List from "./routes/List";
 import Bookmarks from "./routes/Bookmarks";
+import GlobalStyles from "./styles/GlobalStyles";
 
 const router = createBrowserRouter([
   {
@@ -42,7 +43,8 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <div className="App">
+    <div>
+      <GlobalStyles />
       <RouterProvider router={router} />
     </div>
   );
