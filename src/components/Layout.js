@@ -1,11 +1,11 @@
 import { signOut } from "firebase/auth";
-import styled from "styled-components";
 import { auth } from "../firebase";
 import { Outlet, useNavigate } from "react-router-dom";
-
-const Wrapper = styled.div``;
-const NavBarWrapper = styled.div``;
-const Button = styled.button``;
+import {
+  Wrapper,
+  NavBarWrapper,
+  Button,
+} from "../styles/components/StyledLayout";
 
 const Layout = () => {
   const navigate = useNavigate();
