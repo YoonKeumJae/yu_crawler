@@ -1,16 +1,16 @@
 import { useState } from "react";
 import GoogleBtn from "../components/GoogleBtn";
-import styled from "styled-components";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
 import { Link, useNavigate } from "react-router-dom";
-
-const Wrapper = styled.div``;
-const Title = styled.span``;
-const SignInForm = styled.form``;
-const Input = styled.input``;
-const SubmitBtn = styled.button``;
-const Signup = styled.span``;
+import {
+  Wrapper,
+  Title,
+  SignInForm,
+  Input,
+  SubmitBtn,
+  Signup,
+} from "../styles/routes/StyledSignin.js";
 
 const Signin = () => {
   const [email, setEmail] = useState("");
