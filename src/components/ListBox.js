@@ -1,8 +1,5 @@
-import styled from "styled-components";
 import ListItem from "./ListItem";
-
-const Wrapper = styled.div``;
-
+import { Wrapper } from "../styles/components/StyledListBox";
 const ListBox = () => {
   return (
     <Wrapper>

@@ -1,9 +1,5 @@
-import styled from "styled-components";
 import ListBox from "../components/ListBox";
-
-const Wrapper = styled.div``;
-const Title = styled.span``;
-
+import { Wrapper, Title } from "../styles/routes/StyledHome";
 const Home = () => {
   return (
     <Wrapper>
