@@ -1,17 +1,16 @@
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useState } from "react";
-import styled from "styled-components";
 import { auth } from "../firebase";
 import { Link, useNavigate } from "react-router-dom";
+import {
+  Wrapper,
+  Title,
+  Form,
+  Input,
+  Signin,
+  Error,
+} from "../styles/routes/StyledSignup.js";
 
-const Wrapper = styled.div``;
-const Title = styled.span``;
-const Form = styled.form``;
-const Input = styled.input``;
-const Signin = styled.span``;
-const Error = styled.span`
-  color: tomato;
-`;
 
 const Signup = () => {
   const [name, setName] = useState("");

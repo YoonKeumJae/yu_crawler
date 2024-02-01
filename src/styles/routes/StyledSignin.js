@@ -10,10 +10,20 @@ export const Wrapper = styled.div`
     width: 400px;
   }
   @media screen and (min-width: 768px) and (max-width: 1023px) {
-    /* Tablet */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5;
+    width: 400px;
   }
   @media screen and (max-width: 767px) {
-    /* Mobile */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5;
+    width: 400px;
   }
 `;
 export const Title = styled.span`
@@ -23,10 +33,14 @@ export const Title = styled.span`
     margin-bottom: 20px;
   }
   @media screen and (min-width: 768px) and (max-width: 1023px) {
-    /* Tablet */
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
   }
   @media screen and (max-width: 767px) {
-    /* Mobile */
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
   }
 `;
 export const SignInForm = styled.form`
@@ -38,10 +52,18 @@ export const SignInForm = styled.form`
     padding: 20px;
   }
   @media screen and (min-width: 768px) and (max-width: 1023px) {
-    /* Tablet */
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    width: 300px;
+    padding: 20px;
   }
   @media screen and (max-width: 767px) {
-    /* Mobile */
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    width: 300px;
+    padding: 20px;
   }
 `;
 export const Input = styled.input`
@@ -50,10 +72,12 @@ export const Input = styled.input`
     margin: 4px;
   }
   @media screen and (min-width: 768px) and (max-width: 1023px) {
-    /* Tablet */
+    font-size: 18px;
+    margin: 4px;
   }
   @media screen and (max-width: 767px) {
-    /* Mobile */
+    font-size: 18px;
+    margin: 4px;
   }
 `;
 export const SubmitBtn = styled.button`
@@ -61,10 +85,10 @@ export const SubmitBtn = styled.button`
     margin-top: 10px;
   }
   @media screen and (min-width: 768px) and (max-width: 1023px) {
-    /* Tablet */
+    margin-top: 10px;
   }
   @media screen and (max-width: 767px) {
-    /* Mobile */
+    margin-top: 10px;
   }
 `;
 export const Signup = styled.span`
@@ -72,9 +96,9 @@ export const Signup = styled.span`
     margin-top: 10px;
   }
   @media screen and (min-width: 768px) and (max-width: 1023px) {
-    /* Tablet */
+    margin-top: 10px;
   }
   @media screen and (max-width: 767px) {
-    /* Mobile */
+    margin-top: 10px;
   }
 `;
