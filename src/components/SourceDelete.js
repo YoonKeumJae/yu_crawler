@@ -1,8 +1,4 @@
-import styled from "styled-components";
-
-const Wrapper = styled.div``;
-const Minus = styled.button``;
-const Title = styled.span``;
+import { Wrapper, Minus, Title } from "../styles/components/StyledSourceDelete";
 
 const SourceDelete = () => {
   return (

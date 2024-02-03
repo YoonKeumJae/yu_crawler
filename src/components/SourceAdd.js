@@ -1,8 +1,4 @@
-import styled from "styled-components";
-
-const Wrapper = styled.div``;
-const Plus = styled.button``;
-const Title = styled.span``;
+import { Wrapper, Plus, Title } from "../styles/components/StyledSourceAdd";
 
 const SourceAdd = () => {
   return (

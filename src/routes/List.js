@@ -1,21 +1,18 @@
-import styled from "styled-components";
 import SourceAdd from "../components/SourceAdd";
 import SourceDelete from "../components/SourceDelete";
-
-const Wrapper = styled.div``;
-const Title = styled.span``;
-const Box = styled.div``;
+import { Wrapper, Title, Box, Devide } from "../styles/routes/StyledList.js";
 
 const List = () => {
   return (
     <Wrapper>
-      <Title>현재 내 구독 목록</Title>
       <Box>
+        <Title>현재 내 구독 목록</Title>
         <SourceDelete />
         <SourceDelete />
       </Box>
-      <Title>구독 가능한 목록</Title>
+      <Devide />
       <Box>
+        <Title>구독 가능한 목록</Title>
         <SourceAdd />
         <SourceAdd />
         <SourceAdd />
