@@ -1,12 +1,13 @@
-import styled from "styled-components";
-
-const Wrapper = styled.div``;
-const Title = styled.span``;
-
+import { Wrapper, Title } from "../styles/routes/StyledBookmarks";
+import ListItem from "../components/ListItem";
 const Bookmarks = () => {
   return (
     <Wrapper>
       <Title>Bookmarks</Title>
+      <ListItem />
+      <ListItem />
+      <ListItem />
+      <ListItem />
     </Wrapper>
   );
 };
