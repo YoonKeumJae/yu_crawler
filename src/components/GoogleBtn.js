@@ -1,11 +1,11 @@
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth } from "../firebase";
 import { useNavigate } from "react-router-dom";
-import Button from "../styles/components/StyledGoogleBtn";
+import { Button, GoogleLogo } from "../styles/components/StyledGoogleBtn.js";
 
 const GoogleBtn = () => {
   const navigate = useNavigate();
-  
+
   const onClickGoogle = async () => {
     try {
       const provider = new GoogleAuthProvider();
@@ -16,7 +16,12 @@ const GoogleBtn = () => {
     }
   };
 
-  return <Button onClick={onClickGoogle}> continue with google </Button>;
+  return (
+    <Button onClick={onClickGoogle}>
+      <GoogleLogo src="/GoogleLogo.svg" />
+      Google 로그인
+    </Button>
+  );
 };
 
 export default GoogleBtn;

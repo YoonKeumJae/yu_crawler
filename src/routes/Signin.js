@@ -2,7 +2,7 @@ import { useState } from "react";
 import GoogleBtn from "../components/GoogleBtn";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
   Wrapper,
   Title,
@@ -10,6 +10,8 @@ import {
   Input,
   SubmitBtn,
   Signup,
+  Logo,
+  LinkToSignup,
 } from "../styles/routes/StyledSignin.js";
 
 const Signin = () => {
@@ -39,7 +41,8 @@ const Signin = () => {
 
   return (
     <Wrapper>
-      <Title>Sign in</Title>
+      <Logo src="/Logo.svg" />
+      <Title>로그인</Title>
       <SignInForm>
         <Input
           onChange={onChange}
@@ -56,12 +59,13 @@ const Signin = () => {
           required
         />
         <SubmitBtn type="submit" onClick={onSubmit}>
-          Submit
+          로그인
         </SubmitBtn>
       </SignInForm>
       <GoogleBtn />
       <Signup>
-        Don't have an account? <Link to="/signup">Sign up &rarr;</Link>
+        아직 계정이 없으신가요?{" "}
+        <LinkToSignup to="/signup">회원가입 &rarr;</LinkToSignup>
       </Signup>
     </Wrapper>
   );
