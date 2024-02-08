@@ -1,7 +1,6 @@
 const cheerio = require("cheerio");
 const axios = require("axios");
 const logger = require("firebase-functions/logger");
-const auth = require("firebase-functions").config().auth;
 
 const yuhome = async (req, res) => {
   const url = "https://www.yu.ac.kr/main/intro/yu-news.do";
@@ -18,7 +17,6 @@ const yuhome = async (req, res) => {
     const newsItem = { title, link: url + link, source, date };
     newsArray.push(newsItem);
   });
-  logger.info(`User ${auth} called yuhome`, { structuredData: true });
   return newsArray;
 };
 
