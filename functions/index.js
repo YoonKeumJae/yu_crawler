@@ -12,6 +12,7 @@ const logger = require("firebase-functions/logger");
 const { setGlobalOptions } = require("firebase-functions/v2");
 const functions = require("firebase-functions");
 const express = require("express");
+const { yuhome } = require("./schools");
 setGlobalOptions({ maxInstances: 10 });
 
 const app = express();
@@ -19,6 +20,11 @@ const app = express();
 app.get("/hello", (req, res) => {
   logger.info("Hello logs!", { structuredData: true });
   res.json({ message: "Hello from Firebase!" });
+});
+
+app.get("/yuhome", async (req, res) => {
+  const data = await yuhome();
+  res.json(data);
 });
 
 exports.api = functions.https.onRequest(app);
