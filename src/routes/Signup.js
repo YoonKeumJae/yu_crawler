@@ -1,7 +1,7 @@
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useState } from "react";
 import { auth } from "../firebase";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
   Wrapper,
   Title,
@@ -9,8 +9,10 @@ import {
   Input,
   Signin,
   Error,
+  Logo,
+  SubmitBtn,
+  LinkToSignin,
 } from "../styles/routes/StyledSignup.js";
-
 
 const Signup = () => {
   const [name, setName] = useState("");
@@ -59,34 +61,38 @@ const Signup = () => {
 
   return (
     <Wrapper>
-      <Title>Sign up</Title>
+      <Logo src="/Logo.svg" />
+      <Title>회원가입</Title>
       <Form onSubmit={onSubmit}>
         <Input
           type="text"
-          placeholder="Name"
+          placeholder="이름"
           name="name"
           onChange={onChange}
           required
         />
         <Input
           type="email"
-          placeholder="Email"
+          placeholder="이메일"
           name="email"
           onChange={onChange}
           required
         />
         <Input
           type="password"
-          placeholder="Password"
+          placeholder="비밀번호"
           name="password"
           onChange={onChange}
           required
         />
-        <Input type="submit" value={isLoading ? "Loading..." : "Submit"} />
+        <SubmitBtn type="submit">
+          {isLoading ? "로딩중..." : "회원가입"}
+        </SubmitBtn>
       </Form>
       {error !== "" ? null : <Error>{error}</Error>}
       <Signin>
-        Already have an account? <Link to="/signin">Sign in &rarr;</Link>
+        이미 계정이 있으신가요?{" "}
+        <LinkToSignin to="/signin">로그인 &rarr;</LinkToSignin>
       </Signin>
     </Wrapper>
   );
