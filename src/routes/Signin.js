@@ -12,6 +12,8 @@ import {
   Signup,
   Logo,
   LinkToSignup,
+  AutoSigninCheckbox,
+  CheckboxWrapper,
 } from "../styles/routes/StyledSignin.js";
 
 const Signin = () => {
@@ -58,6 +60,10 @@ const Signin = () => {
           name="password"
           required
         />
+        <CheckboxWrapper>
+          <AutoSigninCheckbox type="checkbox" />
+          <span>자동로그인</span>
+        </CheckboxWrapper>
         <SubmitBtn type="submit" onClick={onSubmit}>
           로그인
         </SubmitBtn>
