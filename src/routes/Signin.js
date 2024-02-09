@@ -1,6 +1,10 @@
 import { useState } from "react";
 import GoogleBtn from "../components/GoogleBtn";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import {
+  signInWithEmailAndPassword,
+  setPersistence,
+  browserLocalPersistence,
+} from "firebase/auth";
 import { auth } from "../firebase";
 import { useNavigate } from "react-router-dom";
 import {
@@ -19,6 +23,7 @@ import {
 const Signin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [autoSignin, setAutoSignin] = useState(false);
 
   const onChange = (e) => {
     if (e.target.name === "email") {
@@ -31,13 +36,23 @@ const Signin = () => {
 
   const navigate = useNavigate();
 
+  const onAutoSignin = (e) => {
+    setAutoSignin(e.target.checked);
+  };
+
   const onSubmit = async (e) => {
     e.preventDefault();
-    try {
+    if (autoSignin) {
+      await setPersistence(auth, browserLocalPersistence);
       await signInWithEmailAndPassword(auth, email, password);
       navigate("/");
-    } catch (error) {
-      console.log(error);
+    } else {
+      try {
+        await signInWithEmailAndPassword(auth, email, password);
+        navigate("/");
+      } catch (error) {
+        console.log(error);
+      }
     }
   };
 
@@ -61,8 +76,8 @@ const Signin = () => {
           required
         />
         <CheckboxWrapper>
-          <AutoSigninCheckbox type="checkbox" />
-          <span>자동로그인</span>
+          <AutoSigninCheckbox type="checkbox" onChange={onAutoSignin} />
+          자동로그인
         </CheckboxWrapper>
         <SubmitBtn type="submit" onClick={onSubmit}>
           로그인

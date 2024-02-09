@@ -51,14 +51,10 @@ export const Logo = styled.img`
   height: 300px;
   margin-bottom: 60px;
 `;
-export const CheckboxWrapper = styled.div`
+export const CheckboxWrapper = styled.label`
   display: flex;
   align-items: center;
   margin: 10px 0;
-  
-  span {
-    vertical-align: middle;
-  }
 `;
 export const AutoSigninCheckbox = styled.input`
   margin: 0 10px;

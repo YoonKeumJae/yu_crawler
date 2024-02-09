@@ -7,7 +7,9 @@ const Home = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const data = axios.get("/api/data");
+        const data = axios.get(
+          "https://us-central1-yucrawler.cloudfunctions.net/api/yuhome"
+        );
         console.log(data);
       } catch (error) {
         console.error(error);
