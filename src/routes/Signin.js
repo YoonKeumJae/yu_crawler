@@ -43,8 +43,9 @@ const Signin = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     if (autoSignin) {
-      await setPersistence(auth, browserLocalPersistence);
-      await signInWithEmailAndPassword(auth, email, password);
+      await setPersistence(auth, browserLocalPersistence).then(async () => {
+        await signInWithEmailAndPassword(auth, email, password);
+      });
       navigate("/");
     } else {
       try {

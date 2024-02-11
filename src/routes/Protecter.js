@@ -3,7 +3,7 @@ import { auth } from "../firebase";
 
 const Protecter = ({ children }) => {
   const user = auth.currentUser;
-  if (!user) return <Navigate to="/signin" />;
+  if (user===null) return <Navigate to="/signin" />;
   return children;
 };
 
