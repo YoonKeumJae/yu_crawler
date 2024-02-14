@@ -1,10 +1,16 @@
 const { setGlobalOptions } = require("firebase-functions/v2");
 const functions = require("firebase-functions");
 const express = require("express");
+const cors = require("cors");
 const { yuhome } = require("./schools");
 setGlobalOptions({ maxInstances: 10 });
 
 const app = express();
+let corsOptions = {
+  origin: 'https://yucrawler.web.app/',
+  credentials: true,
+}
+app.use(cors(corsOptions));
 
 app.get("/yuhome", async (req, res) => {
   const data = await yuhome();
