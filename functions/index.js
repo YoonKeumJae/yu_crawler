@@ -7,7 +7,7 @@ setGlobalOptions({ maxInstances: 10 });
 
 const app = express();
 let corsOptions = {
-  origin: 'https://yucrawler.web.app/',
+  origin: 'https://yucrawler.web.app',
   credentials: true,
 }
 app.use(cors(corsOptions));
